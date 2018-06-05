@@ -249,6 +249,13 @@ interface UIDataTransferItem {
 }
 
 interface UIErrorEventArgs extends UIEventArgs {
+  message: string;
+  filename: string;
+  lineno: number;
+  colno: number;
+
+  // omitting 'error' here since we'd have to serialize it, and it's not clear we will want to
+  // do that. https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
 }
 
 interface UIFocusEventArgs extends UIEventArgs {
